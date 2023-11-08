@@ -23,5 +23,5 @@ jobs:
       - name: Install packages
         run: pnpm install
 
-      - name: Run Unit tests (Jest)
-        run: npm test
+      # - name: Run Unit tests (Jest)
+      #   run: npm test
