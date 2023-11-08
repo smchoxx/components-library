@@ -2,23 +2,26 @@ name: Checks
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js 18.x
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18.x
-        cache: 'npm'
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'npm'
 
-    - name: Install packages
-      run: npm ci
-      
-    - name: Run Unit tests (Jest)
-      run: npm test
+      - name: Install pnpm Package Manager
+        run: npm install pnpm -g
+
+      - name: Install packages
+        run: pnpm install
+
+      - name: Run Unit tests (Jest)
+        run: npm test
