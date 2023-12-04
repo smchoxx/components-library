@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SystemModal 시스템 모달 랜더링 - content 1`] = `
+<DocumentFragment>
+  <div
+    class="background show"
+  >
+    <div
+      class="modal showModal"
+    >
+      <div
+        class="content"
+      >
+        콘텐츠 영역
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SystemModal 시스템 모달 랜더링 - footer 타입 없을 경우 1`] = `
+<DocumentFragment>
+  <div
+    class="background show"
+  >
+    <div
+      class="modal showModal"
+    >
+      <div
+        class="footer"
+      >
+        <button
+          class="button confirmButton"
+        >
+          확인
+        </button>
+        <button
+          class="button cancelButton"
+        >
+          
+          취소
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SystemModal 시스템 모달 랜더링 - footer 타입: all 1`] = `
+<DocumentFragment>
+  <div
+    class="background show"
+  >
+    <div
+      class="modal showModal"
+    >
+      <div
+        class="footer"
+      >
+        <button
+          class="button confirmButton"
+        >
+          확인
+        </button>
+        <button
+          class="button cancelButton"
+        >
+          
+          취소
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SystemModal 시스템 모달 랜더링 - footer 타입: cancel 1`] = `
+<DocumentFragment>
+  <div
+    class="background show"
+  >
+    <div
+      class="modal showModal"
+    >
+      <div
+        class="footer"
+      >
+        <button
+          class="button cancelButton"
+        >
+          취소
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SystemModal 시스템 모달 랜더링 - footer 타입: confirm 1`] = `
+<DocumentFragment>
+  <div
+    class="background show"
+  >
+    <div
+      class="modal showModal"
+    >
+      <div
+        class="footer"
+      >
+        <button
+          class="button confirmButton"
+        >
+          확인
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SystemModal 시스템 모달 랜더링 - header (닫기 아이콘 o) 1`] = `
+<DocumentFragment>
+  <div
+    class="background show"
+  >
+    <div
+      class="modal showModal"
+    >
+      <div
+        class="header"
+      >
+        <h2
+          class="title"
+        >
+          헤더
+        </h2>
+        <reactcomponent
+          class="closeIcon"
+          height="20"
+          title="close-icon"
+          width="20"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SystemModal 시스템 모달 랜더링 - header (닫기 아이콘 x) 1`] = `
+<DocumentFragment>
+  <div
+    class="background show"
+  >
+    <div
+      class="modal showModal"
+    >
+      <div
+        class="header"
+      >
+        <h2
+          class="title"
+        >
+          헤더
+        </h2>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SystemModal 시스템 모달 랜더링 - visible: false 1`] = `
+<DocumentFragment>
+  <div
+    class="background "
+  >
+    <div
+      class="modal "
+    >
+      시스템 모달
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SystemModal 시스템 모달 랜더링 - 성공 1`] = `
+<DocumentFragment>
+  <div
+    class="background show"
+  >
+    <div
+      class="modal showModal"
+    >
+      시스템 모달
+    </div>
+  </div>
+</DocumentFragment>
+`;

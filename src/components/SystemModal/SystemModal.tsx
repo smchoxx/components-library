@@ -38,16 +38,18 @@ function SystemModal({ visible, onClose, children }: SystemModalProps): JSX.Elem
 
 interface HeaderProps {
   title: string;
-  useCloseButton?: boolean;
+  isCloseIcon?: boolean;
 }
 
-const Header = ({ title, useCloseButton = true }: HeaderProps): JSX.Element => {
+const Header = ({ title, isCloseIcon = true }: HeaderProps): JSX.Element => {
   const { onClose } = useSystemModal();
 
   return (
     <div className={styles.header}>
       <h2 className={styles.title}>{title}</h2>
-      {useCloseButton && <CloseSVG className={styles.closeIcon} width={20} height={20} onClick={onClose} />}
+      {isCloseIcon && (
+        <CloseSVG title='close-icon' className={styles.closeIcon} width={20} height={20} onClick={onClose} />
+      )}
     </div>
   );
 };
@@ -73,29 +75,23 @@ const CancelButton = ({ text, onClick }: ButtonProps): JSX.Element => (
 );
 
 interface FooterProps {
-  onConfirm: () => void;
-  onCancel: () => void;
+  onConfirm?: () => void;
+  onCancel?: () => void;
   type?: 'all' | 'cancel' | 'confirm';
   confirmText?: string;
   cancelText?: string;
 }
 
-const Footer = ({
-  type = 'all',
-  confirmText = '확인',
-  cancelText = '취소',
-  onConfirm,
-  onCancel,
-}: FooterProps): JSX.Element => {
+const Footer = ({ type, confirmText = '확인', cancelText = '취소', onConfirm, onCancel }: FooterProps): JSX.Element => {
   const { onClose } = useSystemModal();
 
-  const confirm = useCallback(() => {
-    onConfirm();
+  const handleConfirm = useCallback(() => {
+    onConfirm && onConfirm();
     onClose();
   }, [onClose, onConfirm]);
 
-  const cancel = useCallback(() => {
-    onCancel();
+  const handleCancel = useCallback(() => {
+    onCancel && onCancel();
     onClose();
   }, [onClose, onCancel]);
 
@@ -104,22 +100,22 @@ const Footer = ({
       case 'all':
         return (
           <>
-            <ConfirmButton text={confirmText} onClick={confirm} />
-            <CancelButton text={cancelText} onClick={cancel} />
+            <ConfirmButton text={confirmText} onClick={handleConfirm} />
+            <CancelButton text={cancelText} onClick={handleCancel} />
           </>
         );
 
       case 'confirm':
-        return <ConfirmButton text={confirmText} onClick={confirm} />;
+        return <ConfirmButton text={confirmText} onClick={handleConfirm} />;
 
       case 'cancel':
-        return <CancelButton text={cancelText} onClick={cancel} />;
+        return <CancelButton text={cancelText} onClick={handleCancel} />;
 
       default:
         return (
           <>
-            <ConfirmButton text={confirmText} onClick={confirm} />
-            <CancelButton text={cancelText} onClick={cancel} />
+            <ConfirmButton text={confirmText} onClick={handleConfirm} />
+            <CancelButton text={cancelText} onClick={handleCancel} />
           </>
         );
     }
