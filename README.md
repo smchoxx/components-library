@@ -1,4 +1,4 @@
-# Components Library
+# System Modal
 
 Compound Component Pattern을 적용하여 컴포넌트의 유연성과 재사용성에 주목해서 컴포넌트를 제작하였습니다.  
 서브 컴포넌트에 관심사를 분리하여 Prop Drilling 문제를 해결하고 코드 복잡성을 낮추고 생산성은 향상 시킬 수 있도록 하였습니다.
@@ -45,7 +45,7 @@ function App() {
 
 ### API
 
-**System.Header**
+**System**
 |Property|Description|Type|
 |------|---|---|
 |visible|모달창 표시 여부|boolean|
